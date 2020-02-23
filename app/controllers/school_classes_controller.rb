@@ -5,7 +5,7 @@ class SchoolClassesController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@students = Student.find(params[:id])
 	end
 
 	def new
