@@ -9,13 +9,13 @@ class SchoolClassesController < ApplicationController
 	end
 
 	def new
-		@post = Student.new
+		@student = Student.new
 	end
 
 	def create
-	  @post = Student.new(post_params(:title, :description))
-	  @post.save
-	  redirect_to post_path(@post)
+	  @student = Student.new(student_params(:title, :description))
+	  @student.save
+	  redirect_to student_path(@student)
 	end
 
 	def update
@@ -30,7 +30,7 @@ class SchoolClassesController < ApplicationController
 	
 	private
 	
-	def post_params(*args)
+	def student_params(*args)
   params.require(:student).permit(*args)
   end
   
